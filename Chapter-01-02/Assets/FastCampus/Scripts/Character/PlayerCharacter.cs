@@ -17,13 +17,13 @@ namespace FastCampus.Characters
         private LayerMask groundLayerMask;
 
         private NavMeshAgent agent;
-        private Camera camera;
+        private new Camera camera;
 
         [SerializeField]
         private Animator animator;
 
         readonly int moveHash = Animator.StringToHash("Move");
-        readonly int fallingHash = Animator.StringToHash("Falling");
+        //readonly int fallingHash = Animator.StringToHash("Falling");
         #endregion
 
         #region Main Methods
@@ -71,6 +71,7 @@ namespace FastCampus.Characters
                 animator.SetBool(moveHash, false);
             }
 
+            /*
             if (agent.isOnOffMeshLink)
             {
                 animator.SetBool(fallingHash, agent.velocity.y != 0.0f);
@@ -79,6 +80,7 @@ namespace FastCampus.Characters
             {
                 animator.SetBool(fallingHash, false);
             }
+            */
         }
 
         private void OnAnimatorMove()

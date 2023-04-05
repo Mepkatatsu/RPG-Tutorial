@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FastCampus.Cameras
 {
-    public class CameraMenu : MonoBehaviour
+    public class CameraMenu_ymkim50 : MonoBehaviour
     {
         [MenuItem("FastCampus/Cameras/Top Down Camera")]
         public static void CreateTopDownCamera()
@@ -65,10 +65,10 @@ namespace FastCampus.Cameras
         static void AttachTopDownScript(GameObject camera, Transform target = null)
         {
             // Assign top down script to the camera
-            TopDownCamera cameraScript = null;
+            TopDownCamera_ymkim50 cameraScript = null;
             if (camera)
             {
-                cameraScript = camera.AddComponent<TopDownCamera>();
+                cameraScript = camera.AddComponent<TopDownCamera_ymkim50>();
 
                 // check to see if we have a Target and we have a scrip reference
                 if (cameraScript && target)

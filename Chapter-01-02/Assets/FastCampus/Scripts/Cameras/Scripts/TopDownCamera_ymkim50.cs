@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace FastCampus.Cameras
 {
-    public class TopDownCamera : BaseCamera
+    public class TopDownCamera_ymkim50 : BaseCamera
     {
         #region Variables
 

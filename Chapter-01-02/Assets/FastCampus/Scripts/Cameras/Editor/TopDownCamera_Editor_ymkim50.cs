@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace FastCampus.Cameras
 {
-    [CustomEditor(typeof(TopDownCamera))]
+    // [CustomEditor(typeof(TopDownCamera_ymkim50))]
     public class TopDownCamera_Editor : Editor
     {
         #region Variables
-        private TopDownCamera targetCamera;
+        private TopDownCamera_ymkim50 targetCamera;
         #endregion
 
         #region Main Methods
@@ -17,7 +17,7 @@ namespace FastCampus.Cameras
 
         public override void OnInspectorGUI()
         {
-            targetCamera = (TopDownCamera)target;
+            targetCamera = (TopDownCamera_ymkim50)target;
 
             base.OnInspectorGUI();
         }
