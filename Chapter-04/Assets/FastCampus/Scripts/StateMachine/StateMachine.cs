@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace FastCampus.AI
 {
+    /*
     public abstract class State<T>
     {
         protected int mecanimStateHash;
@@ -146,4 +147,5 @@ namespace FastCampus.AI
         }
 
     }
+    */
 }
