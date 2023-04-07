@@ -99,5 +99,4 @@ namespace FastCampus.AI
             return _currentState as R;
         }
     }
-
 }

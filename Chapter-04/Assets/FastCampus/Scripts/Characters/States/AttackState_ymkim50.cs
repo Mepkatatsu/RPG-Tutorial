@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 namespace FastCampus.AI
 {
-    public class AttackState : State<EnemyController>
+    public class AttackState_ymkim50 : State_ymkim50<EnemyController>
     {
         private Animator animator;
 
@@ -26,7 +26,7 @@ namespace FastCampus.AI
             }
             else
             {
-                stateMachine.ChangeState<IdleState>();
+                stateMachine.ChangeState<IdleState_ymkim50>();
             }
         }
 

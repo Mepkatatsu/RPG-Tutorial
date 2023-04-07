@@ -8,7 +8,7 @@ using UnityEngine.AI;
 
 namespace FastCampus.AI
 {
-    public class MoveState : State<EnemyController>
+    public class MoveState_ymkim50 : State_ymkim50<EnemyController>
     {
         private Animator animator;
         private CharacterController controller;
@@ -45,7 +45,7 @@ namespace FastCampus.AI
                 }
             }
 
-            stateMachine.ChangeState<IdleState>();
+            stateMachine.ChangeState<IdleState_ymkim50>();
         }
 
         public override void OnExit()

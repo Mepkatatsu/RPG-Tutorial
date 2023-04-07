@@ -5,33 +5,32 @@ using UnityEngine;
 
 namespace FastCampus.AI
 {
-    /*
-    public abstract class State<T>
+    public abstract class State_ymkim50<T>
     {
         protected int mecanimStateHash;
-        protected StateMachine<T> stateMachine;
+        protected StateMachine_ymkim50<T> stateMachine;
         protected T context;
 
-        public State()
+        public State_ymkim50()
         {
         }
 
         /// <summary>
         /// Constructor that takes the mecanim state name as a string
         /// </summary>
-        public State(string mecanimStateName) : this(Animator.StringToHash(mecanimStateName))
+        public State_ymkim50(string mecanimStateName) : this(Animator.StringToHash(mecanimStateName))
         {
         }
 
         /// <summary>
         /// Constructor that takes the mecanim state hash
         /// </summary>
-        public State(int mecanimStateHash)
+        public State_ymkim50(int mecanimStateHash)
         {
             this.mecanimStateHash = mecanimStateHash;
         }
 
-        internal void SetMachineAndContext(StateMachine<T> stateMachine, T context)
+        internal void SetMachineAndContext(StateMachine_ymkim50<T> stateMachine, T context)
         {
             this.stateMachine = stateMachine;
             this.context = context;
@@ -57,23 +56,23 @@ namespace FastCampus.AI
         { }
     }
 
-    public sealed class StateMachine<T>
+    public sealed class StateMachine_ymkim50<T>
     {
         private T context;
         public event Action OnChangedState;
 
-        private State<T> currentState;
-        public State<T> CurrentState => currentState;
+        private State_ymkim50<T> currentState;
+        public State_ymkim50<T> CurrentState => currentState;
 
-        private State<T> previousState;
-        public State<T> PreviousState => previousState;
+        private State_ymkim50<T> previousState;
+        public State_ymkim50<T> PreviousState => previousState;
 
         private float elapsedTimeInState = 0.0f;
         public float ElapsedTimeInState => elapsedTimeInState;
 
-        private Dictionary<System.Type, State<T>> states = new Dictionary<Type, State<T>>();
+        private Dictionary<System.Type, State_ymkim50<T>> states = new Dictionary<Type, State_ymkim50<T>>();
 
-        public StateMachine(T context, State<T> initialState)
+        public StateMachine_ymkim50(T context, State_ymkim50<T> initialState)
         {
             this.context = context;
 
@@ -86,7 +85,7 @@ namespace FastCampus.AI
         /// <summary>
         /// Adds the state to the machine
         /// </summary>
-        public void AddState(State<T> state)
+        public void AddState(State_ymkim50<T> state)
         {
             state.SetMachineAndContext(this, context);
             states[state.GetType()] = state;
@@ -106,7 +105,7 @@ namespace FastCampus.AI
         /// <summary>
         /// Changes the current state
         /// </summary>
-        public R ChangeState<R>() where R : State<T>
+        public R ChangeState<R>() where R : State_ymkim50<T>
         {
             // avoid changing to the same state
             var newType = typeof(R);
@@ -147,5 +146,4 @@ namespace FastCampus.AI
         }
 
     }
-    */
 }

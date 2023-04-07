@@ -9,7 +9,7 @@ namespace FastCampus.Characters
     public class EnemyController_StateMachine : EnemyController
     {
         #region New Variables
-        protected StateMachine<EnemyController> stateMachine;
+        protected StateMachine_ymkim50<EnemyController> stateMachine;
 
         public LayerMask targetMask;
         public Collider weaponCollider;
@@ -24,9 +24,9 @@ namespace FastCampus.Characters
         {
             base.Start();
 
-            stateMachine = new StateMachine<EnemyController>(this, new IdleState());
-            stateMachine.AddState(new MoveState());
-            stateMachine.AddState(new AttackState());
+            stateMachine = new StateMachine_ymkim50<EnemyController>(this, new IdleState_ymkim50());
+            stateMachine.AddState(new MoveState_ymkim50());
+            stateMachine.AddState(new AttackState_ymkim50());
         }
 
         // Update is called once per frame
@@ -34,7 +34,7 @@ namespace FastCampus.Characters
         {
             stateMachine.Update(Time.deltaTime);
 
-            if (!(stateMachine.CurrentState is MoveState))
+            if (!(stateMachine.CurrentState is MoveState_ymkim50))
             {
                 FaceTarget();
             }
@@ -43,7 +43,7 @@ namespace FastCampus.Characters
         #endregion Unity Methods
 
         #region Helper Methods
-        public R ChangeState<R>() where R : State<EnemyController>
+        public R ChangeState<R>() where R : State_ymkim50<EnemyController>
         {
             return stateMachine.ChangeState<R>();
         }

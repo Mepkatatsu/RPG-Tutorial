@@ -1,11 +1,9 @@
-﻿using System.Collections;
+using FastCampus.Characters;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using FastCampus.Characters;
-using FastCampus.AI;
-
-public class AttackStateMachineBehaviour : StateMachineBehaviour
+public class EndOfAttackStateMachineBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,9 +20,7 @@ public class AttackStateMachineBehaviour : StateMachineBehaviour
     // OnStateExit is called before OnStateExit is called on any state inside this state machine
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.gameObject.GetComponent<EnemyController_StateMachine>()?.ChangeState<IdleState_ymkim50>();
-        animator.gameObject.GetComponent<EnemyController_FOV>()?.ChangeState<IdleState_ymkim50>();
-        animator.gameObject.GetComponent<EnemyController_Patrol>()?.ChangeState<IdleState_ymkim50>();
+        animator.GetComponent<EnemyController_New>()?._StateMachine.ChangeState<IdleState>();
     }
 
     // OnStateMove is called before OnStateMove is called on any state inside this state machine

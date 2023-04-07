@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace FastCampus.AI
 {
-    public class MoveToWaypointState : State<EnemyController>
+    public class MoveToWaypointState : State_ymkim50<EnemyController>
     {
         private Animator animator;
         private CharacterController controller;
@@ -52,11 +52,11 @@ namespace FastCampus.AI
                 {
                     // check attack cool time
                     // and transition to attack state
-                    stateMachine.ChangeState<AttackState>();
+                    stateMachine.ChangeState<AttackState_ymkim50>();
                 }
                 else
                 {
-                    stateMachine.ChangeState<MoveState>();
+                    stateMachine.ChangeState<MoveState_ymkim50>();
                 }
             }
             else
@@ -65,7 +65,7 @@ namespace FastCampus.AI
                 if (!agent.pathPending && (agent.remainingDistance <= agent.stoppingDistance))
                 {
                     FindNextWaypoint();
-                    stateMachine.ChangeState<IdleState>();
+                    stateMachine.ChangeState<IdleState_ymkim50>();
                 }
                 else
                 {
