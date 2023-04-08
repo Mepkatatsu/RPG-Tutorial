@@ -6,17 +6,17 @@ using UnityEngine.AI;
 
 namespace FastCampus.Characters
 {
-    public class EnemyController_FOV : EnemyController
+    public class EnemyController_FOV : EnemyController_ymkim50
     {
         #region Variables
-        protected StateMachine_ymkim50<EnemyController> stateMachine;
+        protected StateMachine_ymkim50<EnemyController_ymkim50> stateMachine;
 
         public LayerMask targetMask;
         public Collider weaponCollider;
 
         public GameObject hitEffect;
 
-        private FieldOfView fov;
+        private FieldOfView_ymkim50 fov;
 
         #endregion Variables
 
@@ -30,11 +30,11 @@ namespace FastCampus.Characters
         {
             base.Start();
 
-            stateMachine = new StateMachine_ymkim50<EnemyController>(this, new IdleState_ymkim50());
+            stateMachine = new StateMachine_ymkim50<EnemyController_ymkim50>(this, new IdleState_ymkim50());
             stateMachine.AddState(new MoveState_ymkim50());
             stateMachine.AddState(new AttackState_ymkim50());
 
-            fov = GetComponent<FieldOfView>();
+            fov = GetComponent<FieldOfView_ymkim50>();
         }
 
         // Update is called once per frame
@@ -51,7 +51,7 @@ namespace FastCampus.Characters
         #endregion Unity Methods
 
         #region Helper Methods
-        public R ChangeState<R>() where R : State_ymkim50<EnemyController>
+        public R ChangeState<R>() where R : State_ymkim50<EnemyController_ymkim50>
         {
             return stateMachine.ChangeState<R>();
         }

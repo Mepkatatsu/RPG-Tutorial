@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FastCampus.AI
 {
-    public class FieldOfView : MonoBehaviour
+    public class FieldOfView_ymkim50 : MonoBehaviour
     {
         #region Variables
 

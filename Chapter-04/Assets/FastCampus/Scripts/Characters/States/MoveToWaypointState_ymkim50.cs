@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace FastCampus.AI
 {
-    public class MoveToWaypointState : State_ymkim50<EnemyController>
+    public class MoveToWaypointState_ymkim50 : State_ymkim50<EnemyController_ymkim50>
     {
         private Animator animator;
         private CharacterController controller;

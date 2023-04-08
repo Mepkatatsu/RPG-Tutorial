@@ -31,6 +31,7 @@ namespace FastCampus.Characters
 
         public override void Update(float deltaTime)
         {
+            //_context.transform.LookAt(_context._Target);
         }
     }
 }

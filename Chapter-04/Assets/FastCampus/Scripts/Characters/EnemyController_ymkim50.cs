@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 namespace FastCampus.Characters
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemyController_ymkim50 : MonoBehaviour
     {
         #region Variables
         public float viewRadius = 5f;

@@ -8,6 +8,11 @@ namespace FastCampus.Characters
 {
     public class IdleState : State<EnemyController_New>
     {
+        public bool _isPatrol = true;
+        private float _minIdleTime = 0.0f;
+        private float _maxIdleTime = 3.0f;
+        private float _idleTime = 0.0f;
+
         private Animator _animator;
         private CharacterController _controller;
 
@@ -25,6 +30,11 @@ namespace FastCampus.Characters
             _animator?.SetBool(_hashMove, false);
             _animator?.SetFloat(_hashMoveSpeed, 0);
             _controller?.Move(Vector3.zero);
+
+            if (_isPatrol)
+            {
+                _idleTime = Random.Range(_minIdleTime, _maxIdleTime);
+            }
         }
 
         public override void Update(float deltaTime)
@@ -40,6 +50,10 @@ namespace FastCampus.Characters
                 {
                     _stateMachine.ChangeState<MoveState>();
                 }
+            }
+            else if (_isPatrol && _stateMachine._ElapsedTimeInState > _idleTime)
+            {
+                _stateMachine.ChangeState<MoveToWaypoint>();
             }
         }
 

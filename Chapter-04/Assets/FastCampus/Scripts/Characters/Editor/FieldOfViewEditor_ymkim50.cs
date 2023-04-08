@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace FastCampus.AI
 {
-    [CustomEditor(typeof(FieldOfView))]
-    public class FieldOfViewEditor : Editor
+    [CustomEditor(typeof(FieldOfView_ymkim50))]
+    public class FieldOfViewEditor_ymkim50 : Editor
     {
         void OnSceneGUI()
         {
-            FieldOfView fov = (FieldOfView)target;
+            FieldOfView_ymkim50 fov = (FieldOfView_ymkim50)target;
 
             // Draw view radius
             Handles.color = Color.white;

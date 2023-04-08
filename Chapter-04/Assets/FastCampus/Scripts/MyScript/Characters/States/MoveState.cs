@@ -25,7 +25,7 @@ namespace FastCampus.Characters
 
         public override void OnEnter()
         {
-            _agent?.SetDestination(_context._target.position);
+            _agent?.SetDestination(_context._Target.position);
             _animator?.SetBool(_hashMove, true);
         }
 
@@ -34,7 +34,7 @@ namespace FastCampus.Characters
             Transform enemy = _context.SearchEnemy();
             if(enemy)
             {
-                _agent.SetDestination(_context._target.position);
+                _agent.SetDestination(_context._Target.position);
 
                 if (_agent.remainingDistance > _agent.stoppingDistance)
                 {

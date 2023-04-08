@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FastCampus.AI
 {
-    public class IdleState_ymkim50 : State_ymkim50<EnemyController>
+    public class IdleState_ymkim50 : State_ymkim50<EnemyController_ymkim50>
     {
         bool isPatrol = false;
         private float minIdleTime = 0.0f;
@@ -55,7 +55,7 @@ namespace FastCampus.AI
             }
             else if (isPatrol && stateMachine.ElapsedTimeInState > idleTime)
             {
-                stateMachine.ChangeState<MoveToWaypointState>();
+                stateMachine.ChangeState<MoveToWaypointState_ymkim50>();
             }
         }
 

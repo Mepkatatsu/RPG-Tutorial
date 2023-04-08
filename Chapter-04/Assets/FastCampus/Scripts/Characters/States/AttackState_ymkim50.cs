@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 namespace FastCampus.AI
 {
-    public class AttackState_ymkim50 : State_ymkim50<EnemyController>
+    public class AttackState_ymkim50 : State_ymkim50<EnemyController_ymkim50>
     {
         private Animator animator;
 

@@ -7,7 +7,7 @@ namespace FastCampus.AI
 {
     public abstract class State<T>
     {
-        protected StateMachine_New<T> _stateMachine;
+        protected StateMachine<T> _stateMachine;
         protected T _context;
 
         public State()
@@ -15,7 +15,7 @@ namespace FastCampus.AI
 
         }
 
-        internal void SetStateMachineAndContect(StateMachine_New<T> stateMachine, T context)
+        internal void SetStateMachineAndContect(StateMachine<T> stateMachine, T context)
         {
             _stateMachine = stateMachine;
             _context = context;
@@ -40,7 +40,7 @@ namespace FastCampus.AI
 
         }
     }
-    public sealed class StateMachine_New<T>
+    public sealed class StateMachine<T>
     {
         private T _context;
 
@@ -55,7 +55,7 @@ namespace FastCampus.AI
 
         private Dictionary<System.Type, State<T>> _states = new Dictionary<System.Type, State<T>>();
 
-        public StateMachine_New(T context, State<T> initialState)
+        public StateMachine(T context, State<T> initialState)
         {
             _context = context;
 
