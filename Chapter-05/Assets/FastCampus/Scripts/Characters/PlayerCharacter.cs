@@ -290,6 +290,8 @@ namespace FastCampus.Characters
 
             health -= damage;
 
+            Debug.Log(health);
+
             if (damageEffectPrefab)
             {
                 Instantiate<GameObject>(damageEffectPrefab, hitPoint);

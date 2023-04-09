@@ -44,11 +44,11 @@ namespace FastCampus.Characters
             {
                 if (_context.IsAvailableAttack)
                 {
-                    _stateMachine.ChangeState<AttackState>();
+                    _stateMachine.ChangeState<IdleState>();
                 }
                 else
                 {
-                    _stateMachine.ChangeState<MoveState>();
+                    _stateMachine.ChangeState<IdleState>();
                 }
             }
             else

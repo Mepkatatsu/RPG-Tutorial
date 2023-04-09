@@ -34,7 +34,7 @@ namespace FastCampus.Characters
 
         protected float calcCoolTime = 0.0f;
 
-        [HideInInspector]
+        // [HideInInspector]
         public LayerMask targetMask;
 
         [SerializeField]
