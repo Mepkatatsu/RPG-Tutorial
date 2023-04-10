@@ -12,6 +12,11 @@ namespace FastCampus.Characters
         public Transform _projectileTransform;
         public Transform _hitTransform;
 
+        public override float AttackRange => _CurrentAttackBehaviour?._range ?? 6.0f;
+
+        [SerializeField]
+        private NPCBattleUI_New _battleUI;
+
         public int _maxHealth = 100;
         public int _health;
 
@@ -35,6 +40,15 @@ namespace FastCampus.Characters
             InitAttackBehaviour();
 
             _health = _maxHealth;
+
+            if (_battleUI)
+            {
+                _battleUI.MinimumValue = 0.0f;
+                _battleUI.MaximumValue = _maxHealth;
+                _battleUI.Value = _health;
+            }
+
+            InitAttackBehaviour();
         }
 
         protected override void Update()
@@ -107,6 +121,12 @@ namespace FastCampus.Characters
             }
 
             _health -= damage;
+
+            if (_battleUI)
+            {
+                _battleUI.Value = _health;
+                _battleUI.CreateDamageText(damage);
+            }
 
             if (hitEffectPrefabs)
             {
