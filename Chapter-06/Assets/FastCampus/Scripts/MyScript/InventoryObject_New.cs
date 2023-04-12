@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using UnityEngine;
 
@@ -56,6 +57,11 @@ public class InventoryObject_New : ScriptableObject
         }
 
         return true;
+    }
+
+    public void Clear()
+    {
+        _container.Clear();
     }
 
     public InventorySlot_New FindItemInInventory(Item_New item)

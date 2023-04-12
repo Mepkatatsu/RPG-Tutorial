@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfa31a830783bd948adee601dba0892f, type: 3}
-  m_Name: New Item 1
+  m_Name: Potion
   m_EditorClassIdentifier: 
-  _type: 0
-  _stackable: 0
-  _icon: {fileID: 0}
+  _type: 8
+  _stackable: 1
+  _icon: {fileID: 21300000, guid: 35e634a16c35ecc41aac4ad408b58631, type: 3}
   _modelPrefab: {fileID: 0}
   _data:
     _id: -1

@@ -20,7 +20,7 @@ public abstract class InventoryUI_New : MonoBehaviour
     public InventoryObject_New _inventoryObject;
     private InventoryObject_New _previousInventoryObject;
 
-    public Dictionary<GameObject, InventorySlot_New> slotUis = new Dictionary<GameObject, InventorySlot_New>();
+    public Dictionary<GameObject, InventorySlot_New> _slotUis = new Dictionary<GameObject, InventorySlot_New>();
 
     private void Awake()
     {
@@ -94,7 +94,7 @@ public abstract class InventoryUI_New : MonoBehaviour
 
     private GameObject CreateDragImage(GameObject go)
     {
-        if (slotUis[go]._item._id < 0)
+        if (_slotUis[go]._item._id < 0)
         {
             return null;
         }
@@ -106,7 +106,7 @@ public abstract class InventoryUI_New : MonoBehaviour
         dragImageGo.transform.SetParent(transform.parent);
 
         Image image = dragImageGo.AddComponent<Image>();
-        image.sprite = slotUis[go].ItemObject._icon;
+        image.sprite = _slotUis[go].ItemObject._icon;
         image.raycastTarget = false;
 
         dragImageGo.name = "Drag Image";
@@ -130,12 +130,41 @@ public abstract class InventoryUI_New : MonoBehaviour
 
         if (MouseData_New.interfaceMouseIsOver == null)
         {
-            slotUis[go].RemoveItem();
+            _slotUis[go].RemoveItem();
         }
         else if (MouseData_New.slotHoveredOver)
         {
-            InventorySlot_New mouseHoverSlotData = MouseData_New.interfaceMouseIsOver.slotUis[MouseData_New.slotHoveredOver];
-            _inventoryObject.SwapItems(slotUis[go], mouseHoverSlotData);
+            InventorySlot_New mouseHoverSlotData = MouseData_New.interfaceMouseIsOver._slotUis[MouseData_New.slotHoveredOver];
+            _inventoryObject.SwapItems(_slotUis[go], mouseHoverSlotData);
         }
+    }
+
+    public void OnClick(GameObject go, PointerEventData data)
+    {
+        InventorySlot_New slot = _slotUis[go];
+        if (slot == null)
+        {
+            return;
+        }
+
+        if (data.button == PointerEventData.InputButton.Left)
+        {
+            OnLeftClick(slot);
+        }
+
+        if (data.button == PointerEventData.InputButton.Right)
+        {
+            OnRightClick(slot);
+        }
+    }
+
+    protected virtual void OnRightClick(InventorySlot_New slot)
+    {
+
+    }
+
+    protected virtual void OnLeftClick(InventorySlot_New slot)
+    {
+
     }
 }

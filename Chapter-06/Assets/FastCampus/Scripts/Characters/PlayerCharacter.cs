@@ -15,10 +15,10 @@ namespace FastCampus.Characters
     public class PlayerCharacter : MonoBehaviour, IAttackable, IDamagable
     {
         [SerializeField]
-        private InventoryObject equipment;
+        private InventoryObject_New equipment;
 
         [SerializeField]
-        private InventoryObject inventory;
+        private InventoryObject_New inventory;
 
         #region Variables
         public PlaceTargetWithMouse picker;
@@ -59,7 +59,7 @@ namespace FastCampus.Characters
         // Start is called before the first frame update
         void Start()
         {
-            inventory.OnUseItem += OnUseItem;
+            // inventory.OnUseItem += OnUseItem;
 
             controller = GetComponent<CharacterController>();
 
@@ -126,7 +126,7 @@ namespace FastCampus.Characters
                         SetTarget(hit.collider.transform, CurrentAttackBehaviour?.range ?? 0);
                     }
 
-                    IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                    IInteractable_New interactable = hit.collider.GetComponent<IInteractable_New>();
                     if (interactable != null)
                     {
                         SetTarget(hit.collider.transform, interactable.Distance);
@@ -166,10 +166,10 @@ namespace FastCampus.Characters
 
                 if (target != null)
                 {
-                    if (target.GetComponent<IInteractable>() != null)
+                    if (target.GetComponent<IInteractable_New>() != null)
                     {
-                        IInteractable interactable = target.GetComponent<IInteractable>();
-                        if (interactable.Interact(this.gameObject))
+                        IInteractable_New interactable = target.GetComponent<IInteractable_New>();
+                        if (interactable.Interact(gameObject))
                         {
                             RemoveTarget();
                         }
@@ -353,18 +353,18 @@ namespace FastCampus.Characters
 
         private void OnTriggerEnter(Collider other)
         {
-            var item = other.GetComponent<GroundItem>();
+            var item = other.GetComponent<GroundItem_New>();
             if (item)
             {
-                if (inventory.AddItem(new Item(item.itemObject), 1))
+                if (inventory.AddItem(new Item_New(item._itemObject), 1))
                     Destroy(other.gameObject);
             }
         }
 
-        public bool PickupItem(PickupItem pickupItem, int amount = 1)
+        public bool PickupItem(PickupItem_New pickupItem, int amount = 1)
         {
 
-            if (pickupItem.itemObject != null && inventory.AddItem(new Item(pickupItem.itemObject), amount))
+            if (pickupItem._itemObject != null && inventory.AddItem(new Item_New(pickupItem._itemObject), amount))
             {
                 Destroy(pickupItem.gameObject);
                 return true;

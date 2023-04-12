@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfa31a830783bd948adee601dba0892f, type: 3}
-  m_Name: New Item
+  m_Name: Sword_00
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 7
   _stackable: 0
   _icon: {fileID: 0}
-  _modelPrefab: {fileID: 0}
+  _modelPrefab: {fileID: 100086, guid: de322d3c2deac7f4986ead9512ebb909, type: 3}
   _data:
     _id: -1
     _name: 

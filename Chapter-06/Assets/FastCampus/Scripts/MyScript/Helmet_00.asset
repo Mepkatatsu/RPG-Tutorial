@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa31a830783bd948adee601dba0892f, type: 3}
+  m_Name: Helmet_00
+  m_EditorClassIdentifier: 
+  _type: 0
+  _stackable: 0
+  _icon: {fileID: 0}
+  _modelPrefab: {fileID: 100086, guid: 0c4b8cfcf6dea794bb663047dcfb0a66, type: 3}
+  _data:
+    _id: -1
+    _name: 
+    _buffs: []
+  _boneNames:
+  - Guardian-Bip001 Head
+  - Guardian-Bip001 Spine1
+  - Guardian-Bip001 Neck
+  _description: 
