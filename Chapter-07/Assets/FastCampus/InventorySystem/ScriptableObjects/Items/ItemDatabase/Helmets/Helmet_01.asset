@@ -19,7 +19,11 @@ MonoBehaviour:
   data:
     id: 20
     name: 
-    buffs: []
+    buffs:
+    - stat: 3
+      value: 0
+      min: 5
+      max: 10
   boneNames:
   - Guardian-Bip001 Head
   - Guardian-Bip001 Spine1

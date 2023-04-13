@@ -19,7 +19,11 @@ MonoBehaviour:
   data:
     id: 61
     name: 
-    buffs: []
+    buffs:
+    - stat: 0
+      value: 0
+      min: 5
+      max: 10
   boneNames:
   - Guardian-Bip001 L Calf
   - Guardian-Bip001 L Thigh
